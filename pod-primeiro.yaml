@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meuapp-pod
+  labels:
+    app: meuapp
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.19-alpine
+

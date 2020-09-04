@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: pratare-replicaset
+  labels:
+    app: pratare-app
+spec:
+  template:
+    metadata:
+      name: pratare-pod
+      labels:
+        app: pratare-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.19-alpine
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pratare-app

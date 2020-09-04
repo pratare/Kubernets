@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pratare-deployment
+  labels:
+    app: pratare-app
+spec:
+  template:
+    metadata:
+      name: pratare-pod
+      labels:
+        app: pratare-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.19-alpine
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pratare-app

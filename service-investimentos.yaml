@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pratare-investimentos-app
+  name: pratare-investimentos-app
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: pratare-investimentos-app
+  type: NodePort
